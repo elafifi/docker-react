@@ -1,0 +1,22 @@
+version: '3'
+services:
+  web:
+    container_name: "elafifi_reactapp"
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: [ "npm", "run", "start" ]
+  test:
+    container_name: "test_app"
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: [ "npm", "run", "test" ]
