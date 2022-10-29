@@ -1,9 +1,9 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  docker-build:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to say helloo
     steps:
       # To use this repository's private action,
       # you must check out the repository
